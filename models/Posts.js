@@ -1,4 +1,4 @@
-//create schema
+//This file contains the schema for the database
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
