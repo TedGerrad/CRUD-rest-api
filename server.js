@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose'); 
 const { MONGO_URI } = require('./config');
 
-//DNTZPxW1Bgvmubod
+
 
 // Routes 
 const postRoutes = require('./routes/api/posts')
