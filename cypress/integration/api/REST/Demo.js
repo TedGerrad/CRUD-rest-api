@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 
 describe("Testing API Endpoints with Cypress", () => {
-/
+
     it("Test GET Request", () => {
         cy.request("http://localhost:5000/api/posts")
         .then((response) => {
