@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 
 describe("Testing API Endpoints with Cypress", () => {
-
+/
     it("Test GET Request", () => {
         cy.request("http://localhost:5000/api/posts")
         .then((response) => {
@@ -23,13 +23,27 @@ describe("Testing API Endpoints with Cypress", () => {
         });
     });
 
+
     it("Test DELETE Request", () => {
         cy.request({
             method: 'DELETE',
-            url: 'http://localhost:5000/api/posts/61f18397d0a4f196849973b5'
+            url: 'http://localhost:5000/api/posts/61f2bfa0371f608750498cf3'
         }).then((response) => {
-            expect(response.body).Array.eq(6);
-        })
-    })
+            expect(response.body).to.contain("success");
+        });
+    });
+
+
+    it("Test PATCH Request", () => {
+        cy.request({
+            method: 'PUT',
+            url: 'http://localhost:5000/api/posts/61dee587498dfa7d91168b8e',
+            body: {
+                "body": "This is an update of post 3"
+            }
+        }).then((response) => {
+            expect(response.body).has.property("body","This is an update of post 3");
+        });
+    });
 
 });
